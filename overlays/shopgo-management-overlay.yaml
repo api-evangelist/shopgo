@@ -1,0 +1,18 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for ShopGo Management API
+  version: 1.0.0
+extends: openapi/shopgo-management-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: true
+      x-apievangelist-source: https://docs.shopgo.me
+      x-error-envelope: result/description (non-RFC9457)
+      x-idempotency: none-documented
+  - target: $.info
+    update:
+      x-links:
+        documentation: https://docs.shopgo.me
+        management_api: https://docs.shopgo.me/management-api/general
+        webhooks: https://docs.shopgo.me/developer-guides/webhooks

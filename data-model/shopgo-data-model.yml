@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/shopgo-management-openapi.yml
+docs: https://docs.shopgo.me/management-api/objects
+note: >-
+  Entity-relationship graph derived from the ShopGo Management API object
+  reference. Order is the aggregate root; Tenant is the account boundary.
+entities:
+  - name: Tenant
+    description: A store account (SaaS tenant). Account boundary for all data.
+    id: tenant_id
+  - name: DashboardUser
+    description: A store owner or staff member belonging to a tenant.
+    id: user_id
+  - name: Order
+    description: Contract representing the exchange of goods or services.
+    id: number
+  - name: Payment
+    description: A payment made to settle an order; refunds are negative payments.
+  - name: Shipment
+    description: A shipment created to fulfill an order.
+    id: id
+  - name: Purchase
+    description: An order line item.
+  - name: Adjustment
+    description: An order price adjustment.
+  - name: Money
+    description: Primitive value object (amount + currency).
+  - name: Address
+    description: Primitive billing/shipping address value object.
+relationships:
+  - {from: DashboardUser, type: belongs_to, to: Tenant, via: tenant_id}
+  - {from: Order, type: belongs_to, to: Tenant, via: tenant}
+  - {from: Order, type: has_many, to: Payment, via: payments}
+  - {from: Order, type: has_many, to: Shipment, via: shipments}
+  - {from: Order, type: has_many, to: Purchase, via: purchases}
+  - {from: Order, type: has_many, to: Adjustment, via: adjustments}
+  - {from: Order, type: has_one, to: Buyer, via: buyer}
+  - {from: Order, type: has_one, to: Money, via: total}
+  - {from: Order, type: has_one, to: Address, via: billing_address}
+  - {from: Order, type: has_one, to: Address, via: shipping_address}
+  - {from: Payment, type: has_one, to: Money, via: total}

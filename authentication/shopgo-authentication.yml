@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.shopgo.me/management-api/authentication.md
+docs: https://docs.shopgo.me/management-api/authentication
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  api_key_headers: [X-API-KEY]
+  oauth2_flows: []
+  notes: >-
+    ShopGo uses API-key authentication only; there is no OAuth2/OIDC surface.
+    A permission model (see authorization) governs what an authenticated key can access.
+schemes:
+  - name: UserApiKey
+    type: apiKey
+    in: header
+    parameter: X-API-KEY
+    description: >-
+      Dashboard user API key. Grants access to the tenant account the dashboard
+      user belongs to. Obtained by POSTing email + password to
+      /v1/management/auth/key.
+    obtain: POST https://api.shopgo.me/v1/management/auth/key
+    test: GET https://api.shopgo.me/v1/management/auth/test
+    sources: [openapi/shopgo-management-openapi.yml, https://docs.shopgo.me/management-api/authentication/using-user-api-key.md]
+  - name: PlatformApiKey
+    type: apiKey
+    in: header
+    parameter: X-API-KEY
+    description: >-
+      Platform-level master API key. Can access any tenant account; intended for
+      ShopGo internal use, provisioned via an approval process. Requires an
+      additional X-TENANT-ID (or X-TENANT-NAME) header to select the target tenant.
+    companion_header: X-TENANT-ID
+    test: GET https://api.shopgo.me/v1/platform/auth/test
+    sources: [openapi/shopgo-platform-openapi.yml, https://docs.shopgo.me/management-api/authentication/using-platform-api-key.md]
+permissions:
+  model: per-key permission flags (dashboard + API)
+  docs: https://docs.shopgo.me/management-api/authorization
+  values:
+    - {name: home, relevance: dashboard-only}
+    - {name: orders, relevance: dashboard-and-api}
+    - {name: reports, relevance: dashboard-and-api}
+    - {name: products, relevance: dashboard-and-api}
+    - {name: customers, relevance: dashboard-and-api}
+    - {name: appearance, relevance: dashboard-only}
+    - {name: settings, relevance: dashboard-and-api}
+  enforcement: >-
+    Missing permission returns 403 Forbidden; expired trial without subscription
+    returns 402 Payment Required.

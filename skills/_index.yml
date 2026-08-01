@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/shopgo-management-openapi.yml
+skills:
+  - file: shopgo-process-order.md
+    name: Process a ShopGo order (payment, authorization, fulfillment)
+    api: openapi/shopgo-management-openapi.yml
+    operations: [testAuthentication, getOrder, createOrderPayment, updateOrder, updateShipment]
+  - file: shopgo-custom-shipping-rates.md
+    name: Provide custom ShopGo shipping rates via webhook
+    api: openapi/shopgo-management-openapi.yml
+    operations: [getWebhookUrl, changeWebhookUrl]

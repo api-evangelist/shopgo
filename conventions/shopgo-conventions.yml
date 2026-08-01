@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.shopgo.me/management-api/general.md
+docs: https://docs.shopgo.me/management-api/general
+summary: >-
+  Cross-cutting request/response semantics for the ShopGo Management and Platform
+  APIs, harvested from the developer documentation and the generated OpenAPI.
+authentication:
+  style: api-key-header
+  header: X-API-KEY
+  tenant_header: X-TENANT-ID
+  see: authentication/shopgo-authentication.yml
+content_type:
+  request: application/json
+  response: application/json
+  note: All requests and responses are application/json.
+response_envelope:
+  shape:
+    result: string    # "success" | "error"
+    payload: object    # present on success; endpoint result data
+  success_example: '{ "result": "success", "payload": { } }'
+  note: >-
+    Outcomes are indicated both by the HTTP status code and by a top-level
+    `result` field. Successful payloads are carried under `payload`.
+error_envelope:
+  shape:
+    result: string     # "error"
+    description: string # human-readable explanation
+  see: errors/shopgo-problem-types.yml
+  note: Errors are NOT RFC 9457 problem+json; they use the result/description envelope.
+idempotency:
+  supported: false
+  note: >-
+    ShopGo documents no idempotency-key mechanism. Writes (payments, order state
+    changes) are not documented as idempotent; retries may duplicate effects.
+pagination:
+  supported: false
+  note: >-
+    Collection endpoints (e.g. list orders, list tenants) return full arrays with
+    no documented cursor/offset paging parameters.
+versioning:
+  scheme: uri-path
+  current: v1
+  docs_version: 1.1.0
+  note: API version is carried in the URI path (/v1/...). Docs are versioned 1.1.0 / 1.0.0.
+  see: lifecycle/shopgo-lifecycle.yml
+rate_limiting:
+  documented: false
+request_tracing:
+  documented: false
+metadata:
+  documented: false
+localization:
+  bilingual_strings: true
+  note: >-
+    Several fields use a BilingualString primitive (e.g. shipping-rate name and
+    description), reflecting the platform's bilingual (Arabic/English) MENA focus.

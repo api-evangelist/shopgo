@@ -1,20 +1,129 @@
 aid: shopgo
 name: ShopGo
-description: ShopGo is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  ShopGo (now branded Makane) is a MENA-focused eCommerce SaaS platform based in
+  Amman, Jordan and founded in 2012, backed by 500 Global. It lets merchants
+  build and run online stores with integrated payment and shipment options
+  across the Middle East and North Africa. For developers, ShopGo publishes a
+  GitBook developer portal (docs.shopgo.me) documenting two REST APIs served
+  from api.shopgo.me: a Management API for store, order, payment and shipment
+  administration, and an internal Platform API for SaaS tenant control. Both use
+  API-key authentication and a JSON result/payload envelope, and the platform
+  supports configurable checkout webhooks (custom shipping rates, order
+  confirmation).
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/shopgo.png
 url: https://raw.githubusercontent.com/api-evangelist/shopgo/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-developer-docs
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- eCommerce
+- Online Stores
+- Payments
+- Shipping
+- SaaS
+- MENA
+- Orders
+apis:
+- aid: shopgo:shopgo-authentication-api
+  name: ShopGo Authentication API
+  description: Obtain and test API keys
+  humanURL: https://docs.shopgo.me/management-api/general
+  baseURL: https://api.shopgo.me/v1/management
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/shopgo-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shopgo.me/management-api/general
+  - type: APIReference
+    url: https://docs.shopgo.me/management-api/orders
+  - type: Documentation
+    url: https://docs.shopgo.me/platform-api/introduction
+- aid: shopgo:shopgo-orders-api
+  name: ShopGo Orders API
+  description: Order, payment and shipment management
+  humanURL: https://docs.shopgo.me/management-api/general
+  baseURL: https://api.shopgo.me/v1/management
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/shopgo-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shopgo.me/management-api/general
+  - type: APIReference
+    url: https://docs.shopgo.me/management-api/orders
+  - type: Documentation
+    url: https://docs.shopgo.me/platform-api/introduction
+- aid: shopgo:shopgo-store-api
+  name: ShopGo Store API
+  description: Store availability, legal and webhook settings
+  humanURL: https://docs.shopgo.me/management-api/general
+  baseURL: https://api.shopgo.me/v1/management
+  tags:
+  - Store
+  properties:
+  - type: OpenAPI
+    url: openapi/shopgo-store-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shopgo.me/management-api/general
+  - type: APIReference
+    url: https://docs.shopgo.me/management-api/orders
+  - type: Documentation
+    url: https://docs.shopgo.me/platform-api/introduction
+- aid: shopgo:shopgo-tenants-api
+  name: ShopGo Tenants API
+  description: The Tenants API from ShopGo — 2 operation(s) for tenants.
+  humanURL: https://docs.shopgo.me/management-api/general
+  baseURL: https://api.shopgo.me/v1/management
+  tags:
+  - Tenants
+  properties:
+  - type: OpenAPI
+    url: openapi/shopgo-tenants-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shopgo.me/management-api/general
+  - type: APIReference
+    url: https://docs.shopgo.me/management-api/orders
+  - type: Documentation
+    url: https://docs.shopgo.me/platform-api/introduction
+- aid: shopgo:shopgo-users-api
+  name: ShopGo Users API
+  description: Dashboard user and tenant information
+  humanURL: https://docs.shopgo.me/management-api/general
+  baseURL: https://api.shopgo.me/v1/management
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/shopgo-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shopgo.me/management-api/general
+  - type: APIReference
+    url: https://docs.shopgo.me/management-api/orders
+  - type: Documentation
+    url: https://docs.shopgo.me/platform-api/introduction
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +132,42 @@ maintainers:
 common:
 - type: Website
   url: https://shopgo.me
+- type: DeveloperPortal
+  url: https://docs.shopgo.me
+- type: Documentation
+  url: https://docs.shopgo.me
+- type: APIReference
+  url: https://docs.shopgo.me/management-api/orders
+- type: GitHubOrganization
+  url: https://github.com/shopgo
+- type: Authentication
+  url: authentication/shopgo-authentication.yml
+- type: Conventions
+  url: conventions/shopgo-conventions.yml
+- type: ErrorCatalog
+  url: errors/shopgo-problem-types.yml
+- type: DataModel
+  url: data-model/shopgo-data-model.yml
+- type: Conformance
+  url: conformance/shopgo-conformance.yml
+- type: Lifecycle
+  url: lifecycle/shopgo-lifecycle.yml
+- type: Webhooks
+  url: asyncapi/shopgo-webhooks.yml
+- type: MCPServer
+  url: mcp/shopgo-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/shopgo-llms.txt
+- type: WellKnown
+  url: well-known/shopgo-well-known.yml
+- type: Overlay
+  url: overlays/shopgo-management-overlay.yaml
+- type: DomainSecurity
+  url: security/shopgo-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1

@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.shopgo.me/llms.txt
+docs: https://docs.shopgo.me
+versioning:
+  scheme: uri-path
+  current: v1
+  docs_versions: ['1.1.0', '1.0.0']
+  note: API version in the URI path (/v1/...). GitBook docs are published as versions 1.1.0 (current) and 1.0.0.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_note: No public status page discovered (no status.shopgo.me).
+deprecated_operations: []

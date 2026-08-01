@@ -1,0 +1,61 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/shopgo-management-openapi.yml
+note: >-
+  ShopGo publishes no official MCP server. This is a candidate tool surface
+  derived one-to-one from the documented Management + Platform API operations,
+  as a starting point for an agent-native wrapper.
+server:
+  name: shopgo
+  transport: http
+  url: null
+tools:
+  - name: retrieve_user_api_key
+    description: Retrieve a dashboard user's API key by email and password.
+    source_operation: openapi/shopgo-management-openapi.yml#retrieveUserApiKey
+  - name: test_authentication
+    description: Test that an API key authenticates.
+    source_operation: openapi/shopgo-management-openapi.yml#testAuthentication
+  - name: list_orders
+    description: Get all orders for the tenant.
+    source_operation: openapi/shopgo-management-openapi.yml#listOrders
+  - name: get_order
+    description: Get a single order by number.
+    source_operation: openapi/shopgo-management-openapi.yml#getOrder
+  - name: create_order_payment
+    description: Create a payment (or refund) for an order.
+    source_operation: openapi/shopgo-management-openapi.yml#createOrderPayment
+  - name: update_order
+    description: Authorize, cancel, or change visibility of an order.
+    source_operation: openapi/shopgo-management-openapi.yml#updateOrder
+  - name: update_shipment
+    description: Update a shipment's state (ready/shipped/delivered).
+    source_operation: openapi/shopgo-management-openapi.yml#updateShipment
+  - name: get_store_availability
+    description: Get whether the store can receive new orders.
+    source_operation: openapi/shopgo-management-openapi.yml#getStoreAvailability
+  - name: override_store_availability
+    description: Manually override store availability.
+    source_operation: openapi/shopgo-management-openapi.yml#overrideStoreAvailability
+  - name: get_user
+    description: Get a dashboard user's profile.
+    source_operation: openapi/shopgo-management-openapi.yml#getUser
+  - name: get_tenant
+    description: Get the tenant (parent) account.
+    source_operation: openapi/shopgo-management-openapi.yml#getTenant
+  - name: get_legal
+    description: Get the store's legal information.
+    source_operation: openapi/shopgo-management-openapi.yml#getLegal
+  - name: get_webhook_url
+    description: Retrieve a configured webhook URL.
+    source_operation: openapi/shopgo-management-openapi.yml#getWebhookUrl
+  - name: change_webhook_url
+    description: Change a configured webhook URL.
+    source_operation: openapi/shopgo-management-openapi.yml#changeWebhookUrl
+  - name: list_platform_tenants
+    description: List all platform tenants (platform key required).
+    source_operation: openapi/shopgo-platform-openapi.yml#listPlatformTenants
+  - name: get_platform_tenant
+    description: Get a single platform tenant (platform key required).
+    source_operation: openapi/shopgo-platform-openapi.yml#getPlatformTenant

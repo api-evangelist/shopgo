@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.shopgo.me/management-api/general.md
+docs: https://docs.shopgo.me/management-api/authorization
+format: custom-result-envelope
+envelope:
+  result: string      # "error"
+  description: string # human-readable explanation of what went wrong
+note: >-
+  ShopGo does not use RFC 9457 problem+json. Errors are signalled by the HTTP
+  status code plus a top-level result="error" and a free-text `description`.
+  Derived from documented status codes in the general, authentication and
+  authorization pages, then enriched from the docs.
+problems:
+  - status: 400
+    title: Bad Request
+    meaning: The request was malformed or missing required fields.
+    example_description: explanation of what went wrong
+    source: https://docs.shopgo.me/management-api/general.md
+  - status: 401
+    title: Unauthorized
+    meaning: Missing or invalid API key, or incorrect credentials on key retrieval.
+    example_description: unauthorized
+    remediation: Provide a valid X-API-KEY header; verify email/password at /auth/key.
+    source: https://docs.shopgo.me/management-api/authentication/using-user-api-key.md
+  - status: 402
+    title: Payment Required
+    meaning: >-
+      The tenant account is on an expired trial with no active subscription;
+      most endpoints are blocked until a subscription is purchased.
+    remediation: Purchase a subscription for the tenant.
+    source: https://docs.shopgo.me/management-api/authorization.md
+  - status: 403
+    title: Forbidden
+    meaning: >-
+      The API key's user lacks the permission required for the endpoint
+      (e.g. calling an order endpoint without the `orders` permission).
+    remediation: Grant the required permission via Settings / Staff Accounts.
+    source: https://docs.shopgo.me/management-api/authorization.md
+  - status: 404
+    title: Not Found
+    meaning: The requested resource (e.g. an order number) does not exist.
+    source: openapi/shopgo-management-openapi.yml

@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: probe
+note: >-
+  Probed the /.well-known/ discovery surface on the ShopGo hosts. No documents
+  were served (all 404 / not present). Recorded as valid absence data.
+hosts:
+  - host: https://api.shopgo.me
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+  - host: https://shopgo.me
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+  - host: https://makane.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /llms.txt, status: 404}

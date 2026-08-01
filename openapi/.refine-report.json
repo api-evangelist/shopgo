@@ -1,0 +1,22 @@
+{
+  "provider": "shopgo",
+  "sources": [
+    "shopgo-authentication-api-openapi.yml",
+    "shopgo-orders-api-openapi.yml",
+    "shopgo-store-api-openapi.yml",
+    "shopgo-tenants-api-openapi.yml",
+    "shopgo-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "shopgo-authentication-api-openapi.yml",
+    "shopgo-orders-api-openapi.yml",
+    "shopgo-store-api-openapi.yml",
+    "shopgo-tenants-api-openapi.yml",
+    "shopgo-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

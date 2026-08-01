@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/shopgo-management-openapi.yml
+note: >-
+  Cross-cutting standards posture derived from the generated OpenAPI and the
+  ShopGo documentation. ShopGo publishes no compliance/certification program,
+  so no Compliance pointer is emitted.
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: API-key-only auth; no oauth2 securitySchemes.
+  - id: oidc
+    conforms: false
+  - id: apikey-auth
+    conforms: true
+    evidence: X-API-KEY header apiKey scheme across all endpoints.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a custom result/description envelope, not application/problem+json.
+  - id: json-api
+    conforms: false
+  - id: rest-json
+    conforms: true
+    evidence: All requests/responses are application/json over REST resources.
+  - id: pagination
+    conforms: false
+    evidence: Collections return full arrays; no documented paging.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key mechanism documented.
+  - id: webhooks
+    conforms: true
+    evidence: Documents configurable webhooks (calculate-shipping-rates, confirm-order).

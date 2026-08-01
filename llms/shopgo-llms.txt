@@ -1,0 +1,82 @@
+# ShopGo
+
+## 1.1.0
+
+- [Welcome](https://docs.shopgo.me/1.1.0/master.md): ShoGo's eCommerce SaaS Platform Documentation
+- [Order Processing](https://docs.shopgo.me/1.1.0/developer-guides/order-processing.md)
+- [Webhooks](https://docs.shopgo.me/1.1.0/developer-guides/webhooks.md)
+- [Calculate Shipping Rates](https://docs.shopgo.me/1.1.0/developer-guides/webhooks/calculate-shipping-rates.md)
+- [Introduction](https://docs.shopgo.me/1.1.0/management-api/general.md)
+- [Authentication](https://docs.shopgo.me/1.1.0/management-api/authentication.md)
+- [Using User API Key](https://docs.shopgo.me/1.1.0/management-api/authentication/using-user-api-key.md)
+- [Using Platform API Key](https://docs.shopgo.me/1.1.0/management-api/authentication/using-platform-api-key.md)
+- [Authorization](https://docs.shopgo.me/1.1.0/management-api/authorization.md)
+- [Objects](https://docs.shopgo.me/1.1.0/management-api/objects.md)
+- [Primitives](https://docs.shopgo.me/1.1.0/management-api/objects/primitives.md): Object model reference for primitive types
+- [Order](https://docs.shopgo.me/1.1.0/management-api/objects/order.md): Object model reference for Order object
+- [Payment](https://docs.shopgo.me/1.1.0/management-api/objects/payment.md): Object model reference for Payment object
+- [Shipment](https://docs.shopgo.me/1.1.0/management-api/objects/shipment.md): Object model reference for Shipment object
+- [Purchase](https://docs.shopgo.me/1.1.0/management-api/objects/purchase.md)
+- [Adjustment](https://docs.shopgo.me/1.1.0/management-api/objects/adjustment.md)
+- [Charge](https://docs.shopgo.me/1.1.0/management-api/objects/charge.md)
+- [Attribute](https://docs.shopgo.me/1.1.0/management-api/objects/attribute.md)
+- [API Endpoints](https://docs.shopgo.me/1.1.0/management-api/orders.md)
+- [Introduction](https://docs.shopgo.me/1.1.0/platform-api/introduction.md)
+- [Authentication](https://docs.shopgo.me/1.1.0/platform-api/authentication.md)
+- [Objects](https://docs.shopgo.me/1.1.0/platform-api/objects.md)
+- [API Endpoints](https://docs.shopgo.me/1.1.0/platform-api/endpoints.md)
+- [Tenant](https://docs.shopgo.me/1.1.0/platform-api/endpoints/tenant.md)
+
+## 1.0.0
+
+- [Welcome](https://docs.shopgo.me/master.md): ShoGo's eCommerce SaaS Platform Documentation
+- [Order Processing](https://docs.shopgo.me/developer-guides/order-processing.md)
+- [Webhooks](https://docs.shopgo.me/developer-guides/webhooks.md)
+- [Calculate Shipping Rates](https://docs.shopgo.me/developer-guides/webhooks/calculate-shipping-rates.md)
+- [Introduction](https://docs.shopgo.me/management-api/general.md)
+- [Authentication](https://docs.shopgo.me/management-api/authentication.md)
+- [Using User API Key](https://docs.shopgo.me/management-api/authentication/using-user-api-key.md)
+- [Using Platform API Key](https://docs.shopgo.me/management-api/authentication/using-platform-api-key.md)
+- [Authorization](https://docs.shopgo.me/management-api/authorization.md)
+- [Objects](https://docs.shopgo.me/management-api/objects.md)
+- [Primitives](https://docs.shopgo.me/management-api/objects/primitives.md): Object model reference for primitive types
+- [Order](https://docs.shopgo.me/management-api/objects/order.md): Object model reference for Order object
+- [Payment](https://docs.shopgo.me/management-api/objects/payment.md): Object model reference for Payment object
+- [Shipment](https://docs.shopgo.me/management-api/objects/shipment.md): Object model reference for Shipment object
+- [Purchase](https://docs.shopgo.me/management-api/objects/purchase.md)
+- [Adjustment](https://docs.shopgo.me/management-api/objects/adjustment.md)
+- [Charge](https://docs.shopgo.me/management-api/objects/charge.md)
+- [Attribute](https://docs.shopgo.me/management-api/objects/attribute.md)
+- [API Endpoints](https://docs.shopgo.me/management-api/orders.md)
+- [Introduction](https://docs.shopgo.me/platform-api/introduction.md)
+- [Authentication](https://docs.shopgo.me/platform-api/authentication.md)
+- [Objects](https://docs.shopgo.me/platform-api/objects.md)
+- [API Endpoints](https://docs.shopgo.me/platform-api/endpoints.md)
+- [Tenant](https://docs.shopgo.me/platform-api/endpoints/tenant.md)
+
+## unstable
+
+- [Welcome](https://docs.shopgo.me/unstable/master.md): ShoGo's eCommerce SaaS Platform Documentation
+- [Order Processing](https://docs.shopgo.me/unstable/developer-guides/order-processing.md)
+- [Webhooks](https://docs.shopgo.me/unstable/developer-guides/webhooks.md)
+- [Calculate Shipping Rates](https://docs.shopgo.me/unstable/developer-guides/webhooks/calculate-shipping-rates.md)
+- [Introduction](https://docs.shopgo.me/unstable/management-api/general.md)
+- [Authentication](https://docs.shopgo.me/unstable/management-api/authentication.md)
+- [Using User API Key](https://docs.shopgo.me/unstable/management-api/authentication/using-user-api-key.md)
+- [Using Platform API Key](https://docs.shopgo.me/unstable/management-api/authentication/using-platform-api-key.md)
+- [Authorization](https://docs.shopgo.me/unstable/management-api/authorization.md)
+- [Objects](https://docs.shopgo.me/unstable/management-api/objects.md)
+- [Primitives](https://docs.shopgo.me/unstable/management-api/objects/primitives.md): Object model reference for primitive types
+- [Order](https://docs.shopgo.me/unstable/management-api/objects/order.md): Object model reference for Order object
+- [Payment](https://docs.shopgo.me/unstable/management-api/objects/payment.md): Object model reference for Payment object
+- [Shipment](https://docs.shopgo.me/unstable/management-api/objects/shipment.md): Object model reference for Shipment object
+- [Purchase](https://docs.shopgo.me/unstable/management-api/objects/purchase.md)
+- [Adjustment](https://docs.shopgo.me/unstable/management-api/objects/adjustment.md)
+- [Charge](https://docs.shopgo.me/unstable/management-api/objects/charge.md)
+- [Attribute](https://docs.shopgo.me/unstable/management-api/objects/attribute.md)
+- [API Endpoints](https://docs.shopgo.me/unstable/management-api/orders.md)
+- [Introduction](https://docs.shopgo.me/unstable/platform-api/introduction.md)
+- [Authentication](https://docs.shopgo.me/unstable/platform-api/authentication.md)
+- [Objects](https://docs.shopgo.me/unstable/platform-api/objects.md)
+- [API Endpoints](https://docs.shopgo.me/unstable/platform-api/endpoints.md)
+- [Tenant](https://docs.shopgo.me/unstable/platform-api/endpoints/tenant.md)

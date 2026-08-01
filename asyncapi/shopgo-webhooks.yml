@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.shopgo.me/developer-guides/webhooks.md
+docs: https://docs.shopgo.me/developer-guides/webhooks
+spec_type: Webhooks
+note: >-
+  ShopGo does not publish an AsyncAPI document. It exposes configurable
+  store-level webhooks (set under Dashboard / Settings / Webhook, or via the
+  Management API /settings/webhook/{name} endpoints). The calculate-shipping-rates
+  webhook is a synchronous request/response callback: ShopGo POSTs a payload and
+  expects an updated response body.
+configuration:
+  dashboard: Dashboard / Settings / Webhook
+  api:
+    get: GET https://api.shopgo.me/v1/management/settings/webhook/{name}
+    set: PATCH https://api.shopgo.me/v1/management/settings/webhook/{name}
+webhooks:
+  - name: calculate-shipping-rates
+    style: synchronous-callback
+    direction: outbound (ShopGo -> your endpoint), expects response body
+    description: >-
+      Fires every time shipping rates are calculated at checkout. ShopGo delivers
+      the available rates plus the current checkout (source and destination
+      addresses) and expects an updated list of ShippingRate objects in the
+      response body to use at checkout.
+    request_shape:
+      rates: '[ShippingRate]'
+      checkout: { shipping: Address, destination: Address }
+    response_shape: '[ShippingRate]'
+    objects:
+      ShippingRate:
+        id: string
+        price: Money
+        duration: { value: integer, unit: 'days|minutes|hours' }
+        name: BilingualString
+        description: BilingualString
+        provider: string  # machine-friendly shipping provider name, e.g. dhl
+    docs: https://docs.shopgo.me/developer-guides/webhooks/calculate-shipping-rates
+  - name: confirm-order
+    style: event
+    direction: outbound (ShopGo -> your endpoint)
+    description: >-
+      Configurable webhook fired around order confirmation. Exposed as a
+      configurable webhook name via the settings/webhook endpoints; payload
+      detail not published in the developer guides.
+    docs: https://docs.shopgo.me/management-api/orders
