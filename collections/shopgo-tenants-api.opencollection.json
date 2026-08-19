@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ShopGo Management Authentication Tenants API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tenants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all tenants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/platform/tenant/"
+          },
+          "docs": "Get list of all platform tenants."
+        },
+        {
+          "info": {
+            "name": "Get tenant (single)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/platform/tenant/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Tenant unique identifier"
+              }
+            ]
+          },
+          "docs": "Get tenant (single)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

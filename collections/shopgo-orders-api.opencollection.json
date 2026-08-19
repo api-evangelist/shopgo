@@ -1,0 +1,131 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ShopGo Management Authentication Orders API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/order/"
+          },
+          "docs": "Get list of all orders for the authenticated tenant."
+        },
+        {
+          "info": {
+            "name": "Get order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/order/:number",
+            "params": [
+              {
+                "name": "number",
+                "value": "",
+                "type": "path",
+                "description": "Order number"
+              }
+            ]
+          },
+          "docs": "Get order"
+        },
+        {
+          "info": {
+            "name": "Update order (authorize / cancel / visibility)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.shopgo.me/v1/management/order/:number",
+            "params": [
+              {
+                "name": "number",
+                "value": "",
+                "type": "path",
+                "description": "Order number"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update order state. Set `authorized` to clear fulfillment, `cancelled` (optionally with `restock`) to cancel, or `visible` to show/hide the order across the dashboard and store fronts."
+        },
+        {
+          "info": {
+            "name": "Create payment (or refund)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.shopgo.me/v1/management/order/:number/payment/",
+            "params": [
+              {
+                "name": "number",
+                "value": "",
+                "type": "path",
+                "description": "Order number"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Payment for an order. All fields are optional; an empty body settles the order with a cash-on-delivery payment for the current balance. To create a refund, set `method` to `refund` with a negative `total`."
+        },
+        {
+          "info": {
+            "name": "Update shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.shopgo.me/v1/management/order/:number/shipment/:id",
+            "params": [
+              {
+                "name": "number",
+                "value": "",
+                "type": "path",
+                "description": "Order number"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Shipment identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a shipment's state. The parent order must be authorized. `state` is one of ready, shipped or delivered."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

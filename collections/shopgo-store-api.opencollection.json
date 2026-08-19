@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ShopGo Management Authentication Store API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Store",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get store availability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/order/available"
+          },
+          "docs": "Get whether the store is available to receive new orders."
+        },
+        {
+          "info": {
+            "name": "Override store availability",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.shopgo.me/v1/management/order/available",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Manually override store availability state."
+        },
+        {
+          "info": {
+            "name": "Get store legal information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/settings/legal"
+          },
+          "docs": "Get store legal information"
+        },
+        {
+          "info": {
+            "name": "Get webhook URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/settings/webhook/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Webhook name"
+              }
+            ]
+          },
+          "docs": "Get webhook URL"
+        },
+        {
+          "info": {
+            "name": "Change webhook URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.shopgo.me/v1/management/settings/webhook/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Webhook name"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Change webhook URL"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ShopGo Management Authentication Users API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get dashboard user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/user/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique user identifier"
+              }
+            ]
+          },
+          "docs": "Get dashboard user"
+        },
+        {
+          "info": {
+            "name": "Get tenant account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/tenant"
+          },
+          "docs": "Get information of the tenant (parent) account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

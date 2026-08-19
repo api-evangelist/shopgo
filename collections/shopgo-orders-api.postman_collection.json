@@ -1,0 +1,777 @@
+{
+  "item": [
+    {
+      "id": "3e01e875-88d8-4ea5-9d4c-3b485e736be1",
+      "name": "Orders",
+      "description": {
+        "content": "Order, payment and shipment management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b4399b5f-5a89-4ffd-a741-dcd49bc5087b",
+          "name": "Get all orders",
+          "request": {
+            "name": "Get all orders",
+            "description": {
+              "content": "Get list of all orders for the authenticated tenant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "management",
+                "order",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2107359b-560c-4d05-9def-9f78891b52d5",
+              "name": "Orders retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"payload\": {\n    \"orders\": [\n      {\n        \"number\": \"string\",\n        \"buyer\": {\n          \"ip\": \"string\",\n          \"name\": \"string\",\n          \"email\": \"string\",\n          \"phone\": \"string\"\n        },\n        \"billing_address\": {},\n        \"shipping_address\": {},\n        \"payment_method\": \"credit_card\",\n        \"total\": {\n          \"amount\": \"25.00\",\n          \"currency\": \"JOD\"\n        },\n        \"created\": \"string\",\n        \"payments\": [\n          {\n            \"total\": {\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"currency\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"method\": \"cash_on_delivery\",\n            \"created\": \"string\",\n            \"transaction_data\": {}\n          },\n          {\n            \"total\": {\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"currency\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"method\": \"cash_on_delivery\",\n            \"created\": \"string\",\n            \"transaction_data\": {}\n          }\n        ],\n        \"shipments\": [\n          {\n            \"id\": \"string\",\n            \"state\": \"shipped\",\n            \"target_delivery\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"state\": \"ready\",\n            \"target_delivery\": \"string\"\n          }\n        ],\n        \"visible\": true,\n        \"viewed\": true,\n        \"cancelled\": true,\n        \"confirmed\": true,\n        \"authorized\": false,\n        \"source\": \"string\"\n      },\n      {\n        \"number\": \"string\",\n        \"buyer\": {\n          \"ip\": \"string\",\n          \"name\": \"string\",\n          \"email\": \"string\",\n          \"phone\": \"string\"\n        },\n        \"billing_address\": {},\n        \"shipping_address\": {},\n        \"payment_method\": \"credit_card\",\n        \"total\": {\n          \"amount\": \"25.00\",\n          \"currency\": \"JOD\"\n        },\n        \"created\": \"string\",\n        \"payments\": [\n          {\n            \"total\": {\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"currency\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"method\": \"cash_on_delivery\",\n            \"created\": \"string\",\n            \"transaction_data\": {}\n          },\n          {\n            \"total\": {\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"currency\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"method\": \"cash_on_delivery\",\n            \"created\": \"string\",\n            \"transaction_data\": {}\n          }\n        ],\n        \"shipments\": [\n          {\n            \"id\": \"string\",\n            \"state\": \"shipped\",\n            \"target_delivery\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"state\": \"delivered\",\n            \"target_delivery\": \"string\"\n          }\n        ],\n        \"visible\": false,\n        \"viewed\": false,\n        \"cancelled\": true,\n        \"confirmed\": false,\n        \"authorized\": true,\n        \"source\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75138946-5b98-45ca-aad0-fa776aef4608",
+              "name": "Error (custom result/description envelope)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"error\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e454cbe3-be36-4f2e-b78e-97601d13127e",
+          "name": "Get order",
+          "request": {
+            "name": "Get order",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "management",
+                "order",
+                ":number"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "number",
+                  "description": "(Required) Order number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1076ec38-6c9f-4051-bd28-68f2fb727c45",
+              "name": "Order retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ":number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "number",
+                      "description": "(Required) Order number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"payload\": {\n    \"orders\": {\n      \"number\": \"string\",\n      \"buyer\": {\n        \"ip\": \"string\",\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"phone\": \"string\"\n      },\n      \"billing_address\": {},\n      \"shipping_address\": {},\n      \"payment_method\": \"credit_card\",\n      \"total\": {\n        \"amount\": \"25.00\",\n        \"currency\": \"JOD\"\n      },\n      \"created\": \"string\",\n      \"payments\": [\n        {\n          \"total\": {\n            \"amount\": \"25.00\",\n            \"currency\": \"JOD\"\n          },\n          \"method\": \"cash_on_delivery\",\n          \"created\": \"string\",\n          \"transaction_data\": {}\n        },\n        {\n          \"total\": {\n            \"amount\": \"25.00\",\n            \"currency\": \"JOD\"\n          },\n          \"method\": \"cash_on_delivery\",\n          \"created\": \"string\",\n          \"transaction_data\": {}\n        }\n      ],\n      \"shipments\": [\n        {\n          \"id\": \"string\",\n          \"state\": \"ready\",\n          \"target_delivery\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"state\": \"delivered\",\n          \"target_delivery\": \"string\"\n        }\n      ],\n      \"visible\": true,\n      \"viewed\": false,\n      \"cancelled\": true,\n      \"confirmed\": false,\n      \"authorized\": true,\n      \"source\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95e954a9-ccb3-45aa-931d-36d0990e791d",
+              "name": "Error (custom result/description envelope)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ":number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "number",
+                      "description": "(Required) Order number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"error\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53ceea85-e32b-4b1c-8bde-1943c6fd2890",
+          "name": "Update order (authorize / cancel / visibility)",
+          "request": {
+            "name": "Update order (authorize / cancel / visibility)",
+            "description": {
+              "content": "Update order state. Set `authorized` to clear fulfillment, `cancelled` (optionally with `restock`) to cancel, or `visible` to show/hide the order across the dashboard and store fronts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "management",
+                "order",
+                ":number"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "number",
+                  "description": "(Required) Order number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"authorized\": \"<boolean>\",\n  \"cancelled\": \"<boolean>\",\n  \"restock\": \"<boolean>\",\n  \"visible\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "13ab95a4-8db2-4419-8be3-6719a43e7970",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ":number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "number",
+                      "description": "(Required) Order number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorized\": \"<boolean>\",\n  \"cancelled\": \"<boolean>\",\n  \"restock\": \"<boolean>\",\n  \"visible\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"success\",\n  \"payload\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "650fa8ae-3e11-46ae-bb5e-c86a40f92470",
+              "name": "Error (custom result/description envelope)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ":number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "number",
+                      "description": "(Required) Order number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authorized\": \"<boolean>\",\n  \"cancelled\": \"<boolean>\",\n  \"restock\": \"<boolean>\",\n  \"visible\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"error\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a5f85ec-29df-4130-8771-9d56e9e685e5",
+          "name": "Create payment (or refund)",
+          "request": {
+            "name": "Create payment (or refund)",
+            "description": {
+              "content": "Create a new Payment for an order. All fields are optional; an empty body settles the order with a cash-on-delivery payment for the current balance. To create a refund, set `method` to `refund` with a negative `total`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "management",
+                "order",
+                ":number",
+                "payment",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "number",
+                  "description": "(Required) Order number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"total\": {\n    \"amount\": \"<string>\",\n    \"currency\": \"<string>\"\n  },\n  \"method\": \"<string>\",\n  \"created\": \"<string>\",\n  \"transaction_data\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "00d1deeb-20e4-4780-85c3-270c9f46f490",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ":number",
+                    "payment",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "number",
+                      "description": "(Required) Order number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"total\": {\n    \"amount\": \"25.00\",\n    \"currency\": \"JOD\"\n  },\n  \"method\": \"cash_on_delivery\",\n  \"created\": \"<string>\",\n  \"transaction_data\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"success\",\n  \"payload\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "049e4221-4ee0-46fe-9124-0f8e8b4342dc",
+          "name": "Update shipment",
+          "request": {
+            "name": "Update shipment",
+            "description": {
+              "content": "Update a shipment's state. The parent order must be authorized. `state` is one of ready, shipped or delivered.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "management",
+                "order",
+                ":number",
+                "shipment",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "number",
+                  "description": "(Required) Order number"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Shipment identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"state\": \"<string>\",\n  \"target_delivery\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2af4cb47-f8f3-471a-b4ef-b0640d06bd8f",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "management",
+                    "order",
+                    ":number",
+                    "shipment",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "number",
+                      "description": "(Required) Order number"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Shipment identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"state\": \"<string>\",\n  \"target_delivery\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"success\",\n  \"payload\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.shopgo.me",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c8b0e844-6d78-4945-874b-032196cee59a",
+    "name": "ShopGo Management Authentication Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ShopGo Management API exposes store setup and administration capabilities equivalent to the functions available through the ShopGo (Makane) merchant dashboard: order, payment, shipment, user, tenant and store-settings management for the MENA eCommerce SaaS platform. All requests and responses use application/json and are wrapped in a result/payload envelope. Authentication is via a dashboard user API key (X-API-KEY header) or a platform master key. This OpenAPI was faithfully generated by the API Evangelist enrichment pipeline from the provider's published documentation at https://docs.shopgo.me — ShopGo does not publish a machine-readable spec.\n\nContact Support:\n Name: ShopGo (Makane)",
+      "type": "text/plain"
+    }
+  }
+}

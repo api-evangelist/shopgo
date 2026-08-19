@@ -1,0 +1,230 @@
+{
+  "item": [
+    {
+      "id": "4c8dc766-85bf-435b-b8a9-a4ce3cebacbf",
+      "name": "Tenants",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c33b4e5-48e4-4399-a22b-da58b5564604",
+          "name": "Get all tenants",
+          "request": {
+            "name": "Get all tenants",
+            "description": {
+              "content": "Get list of all platform tenants.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "platform",
+                "tenant",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10fb18fb-982d-49c4-8cd4-6e30bcbc88f2",
+              "name": "Tenants retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "platform",
+                    "tenant",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"string\",\n  \"payload\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4119b0a-c818-4c08-8038-4e1826475b24",
+          "name": "Get tenant (single)",
+          "request": {
+            "name": "Get tenant (single)",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "platform",
+                "tenant",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Tenant unique identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b7ab8e9-1388-4e33-99a7-dc9bc3237212",
+              "name": "Tenant retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "platform",
+                    "tenant",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Tenant unique identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"string\",\n  \"payload\": {\n    \"tenant\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.shopgo.me",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "67f79765-3902-41a1-b2ba-f058f482af96",
+    "name": "ShopGo Management Authentication Tenants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ShopGo Management API exposes store setup and administration capabilities equivalent to the functions available through the ShopGo (Makane) merchant dashboard: order, payment, shipment, user, tenant and store-settings management for the MENA eCommerce SaaS platform. All requests and responses use application/json and are wrapped in a result/payload envelope. Authentication is via a dashboard user API key (X-API-KEY header) or a platform master key. This OpenAPI was faithfully generated by the API Evangelist enrichment pipeline from the provider's published documentation at https://docs.shopgo.me — ShopGo does not publish a machine-readable spec.\n\nContact Support:\n Name: ShopGo (Makane)",
+      "type": "text/plain"
+    }
+  }
+}

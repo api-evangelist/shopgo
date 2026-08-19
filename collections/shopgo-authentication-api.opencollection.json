@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ShopGo Management Authentication API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve user API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.shopgo.me/v1/management/auth/key",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve the API key of a dashboard user by email and password."
+        },
+        {
+          "info": {
+            "name": "Test authentication",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/management/auth/test"
+          },
+          "docs": "Test that an API key authenticates successfully."
+        },
+        {
+          "info": {
+            "name": "Test platform API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.shopgo.me/v1/platform/auth/test"
+          },
+          "docs": "Test platform API key"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
