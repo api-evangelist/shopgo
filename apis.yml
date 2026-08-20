@@ -36,6 +36,15 @@ created: '2026-07-17'
 modified: '2026-07-21'
 tags:
 - Company
+- E-Commerce
+- Online Stores
+- Payments
+- Shipping
+- Software-as-a-Service
+- MENA
+- Order
+tags_raw:
+- Company
 - eCommerce
 - Online Stores
 - Payments
@@ -66,6 +75,8 @@ apis:
   humanURL: https://docs.shopgo.me/management-api/general
   baseURL: https://api.shopgo.me/v1/management
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -114,6 +125,8 @@ apis:
   humanURL: https://docs.shopgo.me/management-api/general
   baseURL: https://api.shopgo.me/v1/management
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
