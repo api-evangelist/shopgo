@@ -11,6 +11,17 @@ description: >-
   API-key authentication and a JSON result/payload envelope, and the platform
   supports configurable checkout webhooks (custom shipping rates, order
   confirmation).
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
