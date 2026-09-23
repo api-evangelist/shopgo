@@ -1,22 +1,31 @@
 {
   "provider": "shopgo",
   "sources": [
-    "shopgo-authentication-api-openapi.yml",
-    "shopgo-orders-api-openapi.yml",
-    "shopgo-store-api-openapi.yml",
-    "shopgo-tenants-api-openapi.yml",
-    "shopgo-users-api-openapi.yml"
+    "_original/shopgo-management-openapi.yml",
+    "_original/shopgo-platform-openapi.yml"
   ],
   "outputs": [
     "shopgo-authentication-api-openapi.yml",
     "shopgo-orders-api-openapi.yml",
     "shopgo-store-api-openapi.yml",
-    "shopgo-tenants-api-openapi.yml",
-    "shopgo-users-api-openapi.yml"
+    "shopgo-users-api-openapi.yml",
+    "shopgo-tenants-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "shopgo-management-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "shopgo-platform-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "tag 'Authentication' spans 2 source specs (shopgo-management-openapi.yml, shopgo-platform-openapi.yml): per-path servers applied",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "shopgo-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "shopgo-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "shopgo-store-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "shopgo-tenants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "shopgo-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
