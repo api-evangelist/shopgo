@@ -161,6 +161,17 @@ paths:
           $ref: '#/components/responses/Success'
 components:
   schemas:
+    Buyer:
+      type: object
+      properties:
+        ip:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
     Money:
       type: object
       properties:
@@ -170,20 +181,6 @@ components:
         currency:
           type: string
           example: JOD
-    Payment:
-      type: object
-      description: A payment made to settle an order. Refunds are Payments with method=refund and a negative total.
-      properties:
-        total:
-          $ref: '#/components/schemas/Money'
-        method:
-          type: string
-          example: cash_on_delivery
-        created:
-          type: string
-          description: DateTime
-        transaction_data:
-          type: object
     Order:
       type: object
       description: Contract representing the exchange of goods or services.
@@ -246,17 +243,6 @@ components:
           - bank_transfer
           - other
           description: payment method chosen by shopper
-    Buyer:
-      type: object
-      properties:
-        ip:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-        phone:
-          type: string
     Shipment:
       type: object
       properties:
@@ -281,7 +267,27 @@ components:
         description:
           type: string
           description: explanation of what went wrong
+    Payment:
+      type: object
+      description: A payment made to settle an order. Refunds are Payments with method=refund and a negative total.
+      properties:
+        total:
+          $ref: '#/components/schemas/Money'
+        method:
+          type: string
+          example: cash_on_delivery
+        created:
+          type: string
+          description: DateTime
+        transaction_data:
+          type: object
   responses:
+    Error:
+      description: Error (custom result/description envelope)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     Success:
       description: Successful operation
       content:
@@ -294,12 +300,6 @@ components:
                 example: success
               payload:
                 type: object
-    Error:
-      description: Error (custom result/description envelope)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     UserApiKey:
       type: apiKey
