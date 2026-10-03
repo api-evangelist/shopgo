@@ -161,26 +161,16 @@ paths:
           $ref: '#/components/responses/Success'
 components:
   schemas:
-    Buyer:
+    Error:
       type: object
+      description: Error envelope returned on non-2xx responses.
       properties:
-        ip:
+        result:
           type: string
-        name:
+          example: error
+        description:
           type: string
-        email:
-          type: string
-        phone:
-          type: string
-    Money:
-      type: object
-      properties:
-        amount:
-          type: string
-          example: '25.00'
-        currency:
-          type: string
-          example: JOD
+          description: explanation of what went wrong
     Order:
       type: object
       description: Contract representing the exchange of goods or services.
@@ -257,16 +247,15 @@ components:
         target_delivery:
           type: string
           description: DateTime
-    Error:
+    Money:
       type: object
-      description: Error envelope returned on non-2xx responses.
       properties:
-        result:
+        amount:
           type: string
-          example: error
-        description:
+          example: '25.00'
+        currency:
           type: string
-          description: explanation of what went wrong
+          example: JOD
     Payment:
       type: object
       description: A payment made to settle an order. Refunds are Payments with method=refund and a negative total.
@@ -281,13 +270,18 @@ components:
           description: DateTime
         transaction_data:
           type: object
+    Buyer:
+      type: object
+      properties:
+        ip:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
   responses:
-    Error:
-      description: Error (custom result/description envelope)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     Success:
       description: Successful operation
       content:
@@ -300,6 +294,12 @@ components:
                 example: success
               payload:
                 type: object
+    Error:
+      description: Error (custom result/description envelope)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     UserApiKey:
       type: apiKey
