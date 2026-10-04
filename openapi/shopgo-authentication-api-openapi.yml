@@ -110,6 +110,12 @@ paths:
       description: Production
 components:
   schemas:
+    Tenant:
+      type: object
+      description: A ShopGo tenant (store) account.
+    DashboardUser:
+      type: object
+      description: A ShopGo dashboard user (store owner or staff member).
     Error:
       type: object
       description: Error envelope returned on non-2xx responses.
@@ -120,12 +126,6 @@ components:
         description:
           type: string
           description: explanation of what went wrong
-    Tenant:
-      type: object
-      description: A ShopGo tenant (store) account.
-    DashboardUser:
-      type: object
-      description: A ShopGo dashboard user (store owner or staff member).
     Error_2:
       type: object
       properties:
@@ -135,6 +135,12 @@ components:
         description:
           type: string
   responses:
+    Error:
+      description: Error (custom result/description envelope)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     Success:
       description: Successful operation
       content:
@@ -147,12 +153,6 @@ components:
                 example: success
               payload:
                 type: object
-    Error:
-      description: Error (custom result/description envelope)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     UserApiKey:
       type: apiKey

@@ -160,17 +160,35 @@ paths:
         '200':
           $ref: '#/components/responses/Success'
 components:
-  schemas:
+  responses:
     Error:
+      description: Error (custom result/description envelope)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Success:
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+                example: success
+              payload:
+                type: object
+  schemas:
+    Money:
       type: object
-      description: Error envelope returned on non-2xx responses.
       properties:
-        result:
+        amount:
           type: string
-          example: error
-        description:
+          example: '25.00'
+        currency:
           type: string
-          description: explanation of what went wrong
+          example: JOD
     Order:
       type: object
       description: Contract representing the exchange of goods or services.
@@ -233,29 +251,6 @@ components:
           - bank_transfer
           - other
           description: payment method chosen by shopper
-    Shipment:
-      type: object
-      properties:
-        id:
-          type: string
-        state:
-          type: string
-          enum:
-          - ready
-          - shipped
-          - delivered
-        target_delivery:
-          type: string
-          description: DateTime
-    Money:
-      type: object
-      properties:
-        amount:
-          type: string
-          example: '25.00'
-        currency:
-          type: string
-          example: JOD
     Payment:
       type: object
       description: A payment made to settle an order. Refunds are Payments with method=refund and a negative total.
@@ -270,6 +265,30 @@ components:
           description: DateTime
         transaction_data:
           type: object
+    Shipment:
+      type: object
+      properties:
+        id:
+          type: string
+        state:
+          type: string
+          enum:
+          - ready
+          - shipped
+          - delivered
+        target_delivery:
+          type: string
+          description: DateTime
+    Error:
+      type: object
+      description: Error envelope returned on non-2xx responses.
+      properties:
+        result:
+          type: string
+          example: error
+        description:
+          type: string
+          description: explanation of what went wrong
     Buyer:
       type: object
       properties:
@@ -281,25 +300,6 @@ components:
           type: string
         phone:
           type: string
-  responses:
-    Success:
-      description: Successful operation
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              result:
-                type: string
-                example: success
-              payload:
-                type: object
-    Error:
-      description: Error (custom result/description envelope)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     UserApiKey:
       type: apiKey
